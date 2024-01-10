@@ -82,7 +82,9 @@ function nix-shell () {
 
 # Overwrite the nix command
 function nix () {
+    echo 'Debug Intercept'
     if [[ "\$1" == "run" ]] || [[ "\$1" == "develop" ]]; then
+        echo "\$1"
         $(which .any-nix-wrapper) zsh "\$@"
     else
         command nix "\$@"
