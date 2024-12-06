@@ -10,7 +10,7 @@ aliases["nix-shell"] = "@(\$(which .any-nix-shell-wrapper)) xonsh @(\$args)"
 
 # Overwrite the nix command
 def __nix(args):
-    if args and ( args[0] == "run" or args[0] == "develop" ):
+    if args and ( args[0] == "run" or args[0] == "develop" or args[0] == "shell" ):
         @(\$(which .any-nix-wrapper)) xonsh @(args)
     else:
         @(\$(which -s nix)) @(args)

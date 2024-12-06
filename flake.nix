@@ -32,6 +32,7 @@
             mainProgram = "any-nix-shell";
           };
         };
+        packages.default = packages.any-nix-shell;
         devShells.default = pkgs.mkShell {
           buildInputs = [packages.any-nix-shell];
         };
